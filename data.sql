@@ -70,3 +70,334 @@ SET owner_id = (
     )
 WHERE name = 'Devimon'
 OR name = 'Plantmon';
+
+
+-- insert data into vets
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('William Tatcher', 45, '2000-04-23');
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('Maisy Smith', 26, '2019-01-17');
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('Stephanie Mendez', 64, '1981-05-04');
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('Jack Harkness', 38, '2008-06-08')
+
+-- insert data into specialities
+-- Insert the following data for specialties:
+INSERT INTO specializations (species_id, vets_id) VALUES( 
+    (
+        SELECT id
+        FROM species
+        WHERE name = 'Pokemon'
+    ),
+    (
+        SELECT id
+        FROM vets
+        WHERE name = 'William Tatcher'
+    )
+);
+
+INSERT INTO specializations (species_id, vets_id) VALUES( 
+    (
+        SELECT id
+        FROM species
+        WHERE name = 'Pokemon'
+    ),
+    (
+        SELECT id
+        FROM vets
+        WHERE name = 'Stephanie Mendez'
+    )
+);
+
+INSERT INTO specializations (species_id, vets_id) VALUES( 
+    (
+        SELECT id
+        FROM species
+        WHERE name = 'Digimon'
+    ),
+    (
+        SELECT id
+        FROM vets
+        WHERE name = 'Jack Harkness'
+    )
+)
+
+-- insert into visits
+INSERT INTO visits(visit_date, animal_id, vet_id) 
+VALUES(
+        '2020-06-24',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Agumon'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'William Tatcher'
+        )
+    ),
+    -- Agumon visited Stephanie Mendez on Jul 22th, 2020.
+    (
+        '2020-07-22',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Agumon'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Stephanie Mendez'
+        )
+    ),
+    -- Pikachu visited Maisy Smith on Jan 5th, 2020.
+    (
+        '2020-01-05'
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Pikachu'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Maisy Smith'
+        )
+    ),
+    -- Gabumon visited Jack Harkness on Feb 2nd, 2021.
+    (
+        '2021-02-02',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Gabumon'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Jack Harkness'
+        ),
+    ),
+    -- Pikachu visited Maisy Smith on Mar 8th, 2020.
+    (
+        '2020-03-08',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Pikachu'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Maisy Smith'
+        ),
+    ),
+    -- Pikachu visited Maisy Smith on May 14th, 2020.
+    (
+        '2020-06-14',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Pikachu'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Maisy Smith'
+        ),
+    ),
+    -- Devimon visited Stephanie Mendez on May 4th, 2021.
+    (
+        '2021-06-04',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Devimon'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Stephanie Mendez'
+        )
+    ),
+    -- Charmander visited Jack Harkness on Feb 24th, 2021.
+    (
+        '2021-02-24',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Charmander'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Jack Harkness'
+        )
+    ),
+    -- Plantmon visited Maisy Smith on Dec 21st, 2019.
+    (
+        '2019-12-21',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Plantmon'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Maisy Smith'
+        ),
+    ),
+    -- Plantmon visited William Tatcher on Aug 10th, 2020.
+    (
+        '2020-09-10',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Plantmon'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'William Tatcher'
+        ),
+    ),
+    -- Plantmon visited Maisy Smith on Apr 7th, 2021.
+    (
+        '2021-04-17',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Plantmon'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Maisy Smith'
+        )
+    ),
+    -- Squirtle visited Stephanie Mendez on Sep 29th, 2019.
+    (
+        '2019-09-29',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Squirtle'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Stephanie Mendez'
+        )
+    ),
+    -- Angemon visited Jack Harkness on Oct 3rd, 2020.
+    (
+        '2020-10-03',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Angemon'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Jack Harkness'
+        )
+    ),
+    -- Angemon visited Jack Harkness on Nov 4th, 2020.
+    (
+        '2020-11-04',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Angemon'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Jack Harkness'
+        )
+    ),
+    -- Boarmon visited Maisy Smith on Jan 24th, 2019.
+    (
+        '2019-01-24'
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Boarmon'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Maisy Smith'
+        )
+    ),
+    -- Boarmon visited Maisy Smith on May 15th, 2019.
+    (
+        '2019-06-15',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Boarmon'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Maisy Smith'
+        )
+    ),
+    -- Boarmon visited Maisy Smith on Feb 27th, 2020.
+    (
+        '2020-02-27',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Boarmon'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Maisy Smith'
+        )
+    ),
+    -- Boarmon visited Maisy Smith on Aug 3rd, 2020.
+    (
+        '2020-09-03',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Boarmon'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Maisy Smith'
+        )
+    ),
+    -- Blossom visited Stephanie Mendez on May 24th, 2020.
+    (
+        '2020-06-24',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Blossom'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'Stephanie Mendez'
+        )
+    ),
+    -- Blossom visited William Tatcher on Jan 11th, 2021.
+    (
+        '2021-01-11',
+        (
+            SELECT id
+            FROM animals
+            WHERE name = 'Blossom'
+        ),
+        (
+            SELECT id
+            FROM vets
+            WHERE name = 'William Tatcher'
+        )
+    );
+    
