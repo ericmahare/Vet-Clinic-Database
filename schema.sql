@@ -9,7 +9,7 @@ CREATE TABLE animals (
     weight_kg DECIMAL
 );
 
--- Table named owners with the following columns
+-- Table named owners with the required columns
 CREATE TABLE owners (
     id SERIAL PRIMARY KEY,
     fullname CHAR(200),
@@ -40,3 +40,31 @@ ALTER TABLE animals
 ADD owner_id INT;
 ALTER TABLE animals
 ADD CONSTRAINT fk_owner_table FOREIGN KEY(owner_id) REFERENCES owners(id);
+
+-- Vets table
+CREATE TABLE vets (
+    id SERIAL PRIMARY KEY,
+    name CHAR(200),
+    age int,
+    date_of_graduation DATE
+);
+
+--specialization join table
+CREATE TABLE specializations(
+  id INT SERIAL PRIMARY KEY,
+  vets_id INT,
+  species_id INT,
+  CONSTRAINT vets_fk FOREIGN KEY(vets_id) REFERENCES vets(id),
+  CONSTRAINT species_fk FOREIGN KEY(species_id) REFERENCES species(id),
+);\
+
+-- visits join table 
+
+CREATE TABLE visits(
+  id SERIAL PRIMARY KEY,
+  visit_date DATE,
+  animal_id INT,
+  vet_id INT,
+  CONSTRAINT vets_visit_fk FOREIGN KEY(vet_id) REFERENCES vets(id),
+  CONSTRAINT animals_visit_fk FOREIGN KEY(animal_id) REFERENCES animals(id)
+);
