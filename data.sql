@@ -400,10 +400,6 @@ VALUES(
             WHERE name = 'William Tatcher'
         )
     );
-    
-CREATE INDEX visit_animal_idx ON visits(animal_id);
-CREATE INDEX visit_vet_idx ON visits(vet_id);
-CREATE INDEX owners_email ON owners(email);
 
 -- This will add 3.594.280 visits considering you have 10 animals, 4 vets, and it will use around ~87.000 timestamps (~4min approx.)
 INSERT INTO visits (animal_id, vet_id, date_of_visit) SELECT * FROM (SELECT id FROM animals) animal_ids, (SELECT id FROM vets) vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
