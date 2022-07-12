@@ -12,7 +12,7 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
 
 
-## Author
+## Authors
 
 👤 **Eric Mahare**
 
@@ -20,6 +20,17 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - Twitter: [@erikmahare](https://twitter.com/erikmahare) 
 - LinkedIn: [Eric Mahare](https://www.linkedin.com/in/eric-mahare-358944183/) 
 
+👤 **Daniel Urimubenshi**
+
+- GitHub: [@benshidanny11](https://github.com/benshidanny11) 
+- Twitter: [@dbenshi](https://twitter.com/dbenshi) 
+- LinkedIn: [Urimubenshi Daniel](https://www.linkedin.com/in/daniel-urimubenshi-077162185/) 
+
+👤 **Toyosi Taiwo**
+
+- GitHub: [@Yorsyboy](https://github.com/Yorsyboy)
+- Twitter: [@tboytaiwo](https://twitter.com/Tboytaiwo)
+- LinkedIn: [Toyosi Taiwo](https://linkedin.com/in/taiwo-toyosi)
 
 ## 🤝 Contributing
 
