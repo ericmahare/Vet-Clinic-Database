@@ -150,13 +150,6 @@ WHERE vets.name = 'William Tatcher'
 ORDER BY visits.visit_date DESC
 LIMIT 1;
 
--- How many different animals did Stephanie Mendez see?
-SELECT COUNT(DISTINCT animals.id) FROM animals
-JOIN visits ON animals.id = visits.animal_id
-JOIN vets ON vets.id = visits.vet_id
-WHERE vets.name = 'Stephanie Mendez'
-GROUP BY vets.name;
-
 -- Animals that Stephanie Mandez saw
 SELECT COUNT(DISTINCT animals.id) FROM animals
 JOIN visits ON animals.id = visits.animal_id
@@ -165,7 +158,6 @@ WHERE vets.name = 'Stephanie Mendez'
 GROUP BY vets.name;
 
 -- All vets with their speciality
-
 SELECT vets.name,
     species.name AS specialization
 FROM vets
@@ -202,7 +194,7 @@ LIMIT 1;
 
 --Details for most recent visit: animal information, vet information, and date of visit
 SELECT visits.visit_date,
-    animals.name
+    animals.name,
     animals.date_of_birth,
     vets.name,
     vets.age,
@@ -210,7 +202,7 @@ SELECT visits.visit_date,
     animals.escape_attempts,
     animals.weight_kg,
     species.name,
-    owners.full_name
+    owners.fullname
 FROM animals
     JOIN visits ON animals.id = visits.animal_id
     JOIN vets ON vets.id = visits.vet_id
