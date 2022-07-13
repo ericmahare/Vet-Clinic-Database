@@ -2,7 +2,8 @@ CREATE TABLE mediacal_histories (
     id SERIAL PRIMARY KEY,
     admitted_at DATE,
     patient_id INT,
-    status varchar(300)
+    status varchar(300),
+    CONSTRAINT fk_pat foreign key(patient_id) references patients(id)
 )
 
 CREATE TABLE patients (
