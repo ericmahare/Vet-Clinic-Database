@@ -56,7 +56,7 @@ CREATE TABLE specializations(
   species_id INT,
   CONSTRAINT vets_fk FOREIGN KEY(vets_id) REFERENCES vets(id),
   CONSTRAINT species_fk FOREIGN KEY(species_id) REFERENCES species(id),
-);\
+);
 
 -- visits join table 
 
